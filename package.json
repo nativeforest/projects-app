@@ -5,12 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postinstall": "prisma generate",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "@prisma/client": "^6.18.0",
+    "dotenv": "^17.2.3",
     "next": "16.0.0",
+    "pg": "^8.16.3",
+    "postgres": "^3.4.7",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
@@ -24,5 +28,23 @@
     "prisma": "^6.18.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+   "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "@prisma/engines",
+      "bcrypt",
+      "esbuild",
+      "esbuild",
+      "prisma",
+      "sharp",
+      "sharp"
+    ],
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "bcrypt",
+      "prisma"
+    ]
   }
 }
