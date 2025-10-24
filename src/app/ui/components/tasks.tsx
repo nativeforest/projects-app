@@ -1,10 +1,12 @@
-import { ITaskProject } from "@/app/lib/interfaces/project.interface";
 
-export default function Tasks({ tasks }: { tasks: ITaskProject[] }) {
+import { ITask } from "@/app/lib/interfaces/task.interface";
+// if(projectId===task.projectId)
+export default function Tasks({ tasks,projectId }: { tasks: ITask[], projectId:number }) {
     return (
-        <ul >
-            {tasks.map((task) => (
-              <li key={task.id} className="mt-1">
+        <ul className="">
+            {!!tasks && tasks.map((task) => {
+              if(projectId===task.projectId){
+ return ( <li key={task.id} className="mt-1">
               
                 <span className="font-small">{task.name}</span>{" "}
                 <span
@@ -27,8 +29,11 @@ export default function Tasks({ tasks }: { tasks: ITaskProject[] }) {
                     ? "Done"
                     : task.status === "PENDING"?"Pending":task.status === "INPROGRESS"?"In Progress":task.status === "IDLE"?"Idle":task.status === "CANCELLED"?"Cancelled":""}
                 </span>
-              </li>
-            ))}
+              </li>)
+              }else{return null}
+              
+            
+            })}
           </ul>
     )
 }

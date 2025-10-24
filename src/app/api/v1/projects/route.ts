@@ -4,11 +4,8 @@ import prisma from '../../../lib/prismaConfig/prisma';
 
 export async function GET(req: Request) {
     try {
-        const projects:IProject[] = await prisma.project.findMany({
+        const projects = await prisma.project.findMany({
             include: {
-                tasks: true,
-                user: true,
-                rate: true
                 
             },
 

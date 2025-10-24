@@ -1,8 +1,8 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
-
-
+-Download repository
+-Config env variables
 ### Install project
 
 pnpm install 
@@ -10,20 +10,11 @@ pnpm install
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
 
@@ -33,7 +24,8 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 
-- Tailwind doc: https://tailwindcss.com
+-Tailwind doc: https://tailwindcss.com
+- Prisma  : https://www.prisma.io/docs
 
 
 ## UTILS:
@@ -41,14 +33,14 @@ NODE VERSION 22
 pnpm (package management)
 REACTJS NEXTJS
 PRISMA ORM
-POSTGRES
+POSTGRES SQL
 
 #### commands helper:
 
 npx prisma init
 npx prisma generate
 npx prisma migrate dev --name init
-npx prisma migrate reset  (care reset DB)
+npx prisma migrate reset  (WARNING!! reset DB)
 
 any prisma problems :  rm -rf node_modules pnpm-lock.yaml && pnpm install 
 
@@ -62,3 +54,4 @@ any prisma problems :  rm -rf node_modules pnpm-lock.yaml && pnpm install
  ## API EXPOSE:
 
  api/v1/projects
+ /api/v1/users
