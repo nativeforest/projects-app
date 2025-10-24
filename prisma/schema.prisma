@@ -31,10 +31,6 @@ enum StatusActivity {
 
 
 
-
-
-
-
 model User {
   id    Int       @id @default(autoincrement())
   name  String    @unique @db.VarChar(50)
@@ -44,7 +40,7 @@ model User {
   creationDate DateTime  @default(now())
 
  
-  projectsAssigned  UsersProjects[] // Asignaciones a proyectos (y su rate)
+  projectsAssigned  UsersProjects[] 
   tasksAssigned     Task[]            @relation("ResponsibleTask") 
   
   @@map("Users") 
@@ -60,10 +56,10 @@ model Project {
   dateFinished DateTime    
   
   // Relaciones
-  usersProject       UsersProjects[] // Los usuarios asignados y su rate
+  usersProject       UsersProjects[] 
   tasks             Task[]           
   
-  @@map("Projects") // Nombre de la tabla en PostgreSQL
+  @@map("Projects") 
 }
 
 model Rate {
@@ -96,7 +92,7 @@ model UsersProjects {
   
   // Clave primaria compuesta
   @@id([userId, projectId])
-  @@map("Users_Proyects") // Nombre de la tabla en PostgreSQL
+  @@map("Users_Proyects") 
 }
 
 ///////////////////////////

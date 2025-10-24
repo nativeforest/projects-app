@@ -1,7 +1,6 @@
 
-import CalendarIcon from "./calendar.icon";
 import ProjectsAssigned from "./ProjectsAssigned";
-import Tasks from "./tasks";
+
 import { IUser } from "@/app/lib/interfaces/user.interface";
 
 export default function Card({ user }: { user: IUser }) {
